@@ -1,0 +1,25 @@
+{
+  "name": "aaa",
+  "version": "1.0.0",
+  "description": "ThinkPHP 5.0 ===============",
+  "main": "gulp.gulpfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "gulp-clean-css": "^3.9.4",
+    "gulp-imagemin": "^4.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^3.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

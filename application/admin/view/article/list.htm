@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html><head>
+{include file="public/introduce"}
+</head>
+<body>
+{include file="public/head"}
+
+	<!-- /头部 -->
+	
+	<div class="main-container container-fluid">
+		<div class="page-container">
+			            <!-- Page Sidebar -->
+            <div class="page-sidebar" id="sidebar">
+                <!-- Page Sidebar Header-->
+        {include file="public/left"}
+            <!-- /Page Sidebar -->  
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Page Breadcrumb -->
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                                        <li>
+              <a href="{:url('index/index')}">系统</a>
+                    </li>
+                                        <li class="active">文章管理</li>
+                                        </ul>
+                </div>
+                <!-- /Page Breadcrumb -->
+
+                <!-- Page Body -->
+                <div class="page-body">
+                    
+<button type="button" tooltip="添加文章" class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = '{:url('add')}'"> <i class="fa fa-plus"></i> Add
+</button>
+<div class="row">
+    <div class="col-lg-12 col-sm-12 col-xs-12">
+        <div class="widget">
+            <div class="widget-body">
+                <div class="flip-scroll">
+                    <table class="table table-bordered table-hover">
+                        <thead class="">
+                            <tr>
+                                <th class="text-center">ID</th>
+                                <th class="text-center">所屬欄目</th>
+                                <th class="text-center">文章標題</th>
+                                <th class="text-center">是否為動態標題</th>
+                                <th class="text-center">作者</th>
+                                <th class="text-center">縮略圖</th>
+                                <th class="text-center">發布時間</th>
+                                <th class="text-center">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {volist name="listRes" id="Res"}
+                                                        <tr>
+                                <td align="center">{$Res.id}</td>
+
+                                <td align="center">{$Res.catename}</td>
+
+                                <td align="center">{$Res.title}</td>
+                                
+                                <td align="center">{if condition="$Res['rec'] eq 0"}否 {else}是 {/if}</td>
+
+                                <td align="center">{$Res.author}</td>
+                                <td align="center">
+                                    <img src="{$Res.thumb}" style="height: 35px" alt="">
+                                </td>
+                                <td align="center">{$Res.time|date="Y-m-d",###}</td>
+                                <td align="center">
+                                    <a href="{:url('edit',array('id'=>$Res['id']))}" class="btn btn-primary btn-sm shiny">
+                                        <i class="fa fa-edit"></i> 编辑
+                                    </a>
+                                     <a href="{:url('del',array('id'=>$Res.id))}" onClick="warning('确实要删除吗', '')" class="btn btn-danger btn-sm shiny">
+                                        <i class="fa fa-trash-o"></i> 删除
+                                    </a>
+                                </td>
+                            </tr>
+                      {/volist}
+                                                    </tbody>
+                    </table>
+                </div>
+            <div>
+                	   {$listRes->render()}            
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                </div>
+                <!-- /Page Body -->
+            </div>
+            <!-- /Page Content -->
+		</div>	
+	</div>
+
+	    <!--Basic Scripts-->
+    <script src="__ADMIN__/style/jquery_002.js"></script>
+    <script src="__ADMIN__/style/bootstrap.js"></script>
+    <script src="__ADMIN__/style/jquery.js"></script>
+    <!--Beyond Scripts-->
+    <script src="__ADMIN__/style/beyond.js"></script>
+    
+
+
+</body></html>

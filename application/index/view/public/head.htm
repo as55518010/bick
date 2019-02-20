@@ -1,0 +1,77 @@
+<div id="header_wrap" >
+    <div id="header">
+        <div style="float: left; width: 310px;">
+            <h1>
+
+               <a href="{:url('/')}">  <img height="65px" title="{$confres.Logo.value}" src="{$confres.Logo.values}"  alt=""></a>     
+              
+
+                <div class="" id="logo-sub-class">
+                </div>
+            </h1>
+        </div>
+        <div id="navi">
+
+<ul id="jsddm">
+<li><a  class="navi_home" href="{:url('/')}">首頁</a></li>
+<?php foreach($cateres as $k =>$v){ ?>
+
+<li><a  class="navi_home" href="__ROOT__/public/index.php/index/{if condition="$v['type'] eq 1"}artlist{elseif condition="$v['type'] eq 3" /}imglist{else /}page{/if}/index/cateid/{$v.id}"><?php echo $v['catename'];  ?></a>
+  <?php if(array_key_exists('subcat',$v)){ ?>
+<ul>
+
+<?php foreach($v['subcat'] as $k1 =>$v1){ ?>
+  
+    <li><a href="__ROOT__/public/index.php/index/{if condition="$v1['type'] eq 1"}artlist{elseif condition="$v1['type'] eq 3" /}imglist{else /}page{/if}/index/cateid/{$v1.id}"><?php echo $v1['catename']; ?></a>
+    
+    <?php if(array_key_exists('subcat',$v1)){ ?>
+        
+        <ul>
+            <?php foreach($v1['subcat'] as $k2 =>$v2){ ?>
+           <li><a  class="navi_home" href="__ROOT__/public/index.php/index/{if condition="$v2['type'] eq 1"}artlist{elseif condition="$v2['type'] eq 3" /}imglist{else /}page{/if}/index/cateid/{$v2.id}"><?php echo $v2['catename']; ?></a></li>
+           <?php } ?>
+        </ul>
+
+     <?php } ?>
+    </li>
+    <?php } ?>
+</ul>
+    <?php }?>
+ </li>
+<?php } ?>
+</ul>
+
+
+
+            <div style="clear: both;">
+            </div>
+
+            
+        </div>
+        <div style="float: right; width: 209px;">
+            <div class="widget" style="height: 30px; padding-top: 20px;">
+                <div style="float: left;">
+      <form  name="formsearch" action="{:url('search/index')}"><input type="hidden" name="kwtype" />                
+<input name="q" type="text" style="background-color: #000000;padding-left: 10px; font-size: 12px;font-family: 'Microsoft Yahei'; color: #999999;height: 29px; width: 160px; border: solid 1px #666666; line-height: 28px;" id="go" value="在這裡搜索..." onfocus="if(this.value=='在這裡搜索...'){this.value='';}"  onblur="if(this.value==''){this.value='在這裡搜索...';}" />
+        </form>
+                        </div>
+                <div style="float: left;">
+                    <img src="__INDEX__/images/search-new.png" id="imgSearch" style="cursor: pointer; margin: 0px;
+                        padding: 0px;" onclick="subForm()"  /></div>
+                <div style="clear: both;">
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+</div>
+ <script>
+ function subForm()
+ {
+
+ formsearch.submit();
+ //form1為form的id
+ }
+ </script>

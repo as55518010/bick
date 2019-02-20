@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><!--Head--><head>
+        <meta charset="utf-8">
+    <title>後台登入系統</title>
+    <link rel="icon" href="__ADMIN__/images/vimeo.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="__ADMIN__/images/vimeo.png" type="image/x-icon" />
+    <meta name="description" content="Dashboard">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--Basic Styles-->
+    <link href="__ADMIN__/style/bootstrap.css" rel="stylesheet">
+    <link href="__ADMIN__/style/font-awesome.css" rel="stylesheet">
+    <link href="__ADMIN__/style/weather-icons.css" rel="stylesheet">
+
+    <!--Beyond styles-->
+    <link id="beyond-link" href="__ADMIN__/style/beyond.css" rel="stylesheet" type="text/css">
+    <link href="__ADMIN__/style/demo.css" rel="stylesheet">
+    <link href="__ADMIN__/style/typicons.css" rel="stylesheet">
+    <link href="__ADMIN__/style/animate.css" rel="stylesheet">
+        <!-- jQuery -->
+    <script src="__PUBLIC__/static/public/jquery.min.js"></script>
+</head>
+<!--Head Ends-->
+<!--Body-->
+
+<body>
+    <div class="login-container animated fadeInDown">
+        <form action="" method="post">
+            <div class="loginbox bg-white">
+                <div class="loginbox-title">超級登入畫面</div>
+                <div class="loginbox-textbox">
+                    <input  class="form-control" placeholder="帳號" name="name" type="text">
+                </div>
+                <div class="loginbox-textbox">
+                    <input class="form-control" placeholder="密碼" name="password" type="password">
+                </div>
+                <div class="loginbox-textbox">
+                    <input style="width: 100px;float: left;" class="form-control" placeholder="驗證碼" name="code"  type="text">
+                    <img src="{:captcha_src()}" onclick="this.src='{:captcha_src()}?'+Math.random();" width="120" style="float:left; cursor:pointer;" alt="captcha" />
+                </div>
+                <div class="loginbox-submit">
+                    <input class="btn btn-primary btn-block" value="登入" type="submit">
+                </div>
+            </div>
+
+                <div class="logobox">
+                    <p class="text-center">可聯繫作者，line:09##</p>
+                </div>
+        </form>
+    </div>
+    <!--Basic Scripts-->
+    <script src="__ADMIN__/style/jquery.js"></script>
+    <script src="__ADMIN__/style/bootstrap.js"></script>
+    <script src="__ADMIN__/style/jquery_002.js"></script>
+    <!--Beyond Scripts-->
+    <script src="__ADMIN__/style/beyond.js"></script>
+
+
+
+
+</body><!--Body Ends--></html>
